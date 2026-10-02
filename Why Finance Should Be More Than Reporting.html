@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article | Nina Honkalinna</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #111011;
+      --pink: #b66f87;
+      --cream: #fffaf7;
+      --soft-pink: #f8edf1;
+      --grey: #686166;
+      --line: rgba(17, 16, 17, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--black);
+      background: var(--cream);
+      line-height: 1.8;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      height: 76px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,250,247,.96);
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .logo span { color: var(--pink); }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--pink); }
+
+    .language-switch {
+      display: flex;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 3px;
+      gap: 2px;
+      margin-left: 4px;
+    }
+
+    .language-switch button {
+      border: 0;
+      background: transparent;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .language-switch button.active {
+      background: var(--black);
+      color: white;
+    }
+
+    .article {
+      width: min(900px, 88%);
+      margin: 0 auto;
+      padding: 120px 0 140px;
+    }
+
+    .article-label {
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .article h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(52px, 8vw, 90px);
+      line-height: .98;
+      font-weight: 600;
+      letter-spacing: -.04em;
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .article-intro {
+      font-size: 19px;
+      color: var(--grey);
+      max-width: 720px;
+      margin-bottom: 55px;
+    }
+
+    .article-meta {
+      font-size: 13px;
+      color: var(--grey);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+      margin-bottom: 65px;
+    }
+
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .article-body h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 55px 0 18px;
+    }
+
+    .article-body h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 30px;
+      margin: 40px 0 12px;
+    }
+
+    .article-body p,
+    .article-body ul,
+    .article-body ol {
+      font-size: 17px;
+    }
+
+    .article-body p { margin-bottom: 24px; }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 28px 25px;
+    }
+
+    .article-body li { margin-bottom: 8px; }
+
+    .article-body blockquote {
+      margin: 45px 0;
+      padding: 28px 32px;
+      background: var(--soft-pink);
+      border-left: 3px solid var(--pink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    .article-image {
+      width: 100%;
+      min-height: 320px;
+      margin: 45px 0;
+      background: var(--soft-pink);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .article-footer {
+      margin-top: 90px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      header { padding: 0 6%; }
+      nav a:not(.articles-link) { display: none; }
+      .article { padding: 75px 0 100px; }
+      .article h1 { font-size: 56px; }
+      .article-body p,
+      .article-body ul,
+      .article-body ol { font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">NINA <span>HONKALINNA</span></a>
+
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="index.html#expertise">Expertise</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="articles.html" class="articles-link">Articles</a>
+    <a href="index.html#contact">Contact</a>
+
+    <div class="language-switch">
+      <button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
+      <button id="fiBtn" onclick="setLanguage('fi')">FI</button>
+    </div>
+  </nav>
+</header>
+
+<main class="article">
+
+  <!-- ENGLISH VERSION -->
+  <section id="englishArticle" class="language-content">
+
+    <div class="article-label">ARTICLE</div>
+
+    <h1>Why Finance Should Be More Than Reporting</h1>
+
+    <p class="article-intro">
+      Add a short introduction or summary of the article here.
+    </p>
+
+    <div class="article-meta">
+      Nina Honkalinna &nbsp;·&nbsp; October 2026 &nbsp;·&nbsp; Finance / Business / Technology
+    </div>
+
+    <div class="article-body">
+
+      <div class="article-image">Add article image here</div>
+
+      <p>
+        Start writing your article here. Replace this text with your own content.
+      </p>
+
+      <h2>Your first section heading</h2>
+
+      <p>
+        Write the main content of your article here. You can use as many
+        paragraphs as you need.
+      </p>
+
+      <h2>Another section</h2>
+
+      <p>
+        Add another section whenever you need one.
+      </p>
+
+      <blockquote>
+        Add an important quote, thought, or key takeaway here.
+      </blockquote>
+
+      <h3>Optional smaller heading</h3>
+
+      <p>More content goes here.</p>
+
+    </div>
+  </section>
+
+
+  <!-- FINNISH VERSION -->
+  <section id="finnishArticle" class="language-content" style="display:none;">
+
+    <div class="article-label">ARTIKKELI</div>
+
+    <h1>Kirjoita artikkelin otsikko tähän.</h1>
+
+    <p class="article-intro">
+      Lisää tähän lyhyt johdanto tai yhteenveto artikkelista.
+    </p>
+
+    <div class="article-meta">
+      Nina Honkalinna &nbsp;·&nbsp; Lokakuu 2026 &nbsp;·&nbsp; Talous / Liiketoiminta / Teknologia
+    </div>
+
+    <div class="article-body">
+
+      <div class="article-image">Lisää artikkelin kuva tähän</div>
+
+      <p>
+        Aloita artikkelin kirjoittaminen tästä. Korvaa tämä teksti omalla sisällölläsi.
+      </p>
+
+      <h2>Ensimmäinen väliotsikko</h2>
+
+      <p>
+        Kirjoita artikkelin varsinainen sisältö tähän. Voit käyttää niin monta
+        kappaletta kuin tarvitset.
+      </p>
+
+      <h2>Toinen osio</h2>
+
+      <p>
+        Lisää uusia osioita tarpeen mukaan.
+      </p>
+
+      <blockquote>
+        Lisää tähän tärkeä sitaatti, ajatus tai keskeinen huomio.
+      </blockquote>
+
+      <h3>Valinnainen pienempi otsikko</h3>
+
+      <p>Lisää tähän lisää sisältöä.</p>
+
+    </div>
+  </section>
+
+  <div class="article-footer">
+    © 2026 Nina Honkalinna
+  </div>
+
+</main>
+
+<script>
+  function setLanguage(language) {
+    const english = document.getElementById("englishArticle");
+    const finnish = document.getElementById("finnishArticle");
+    const enBtn = document.getElementById("enBtn");
+    const fiBtn = document.getElementById("fiBtn");
+
+    if (language === "fi") {
+      english.style.display = "none";
+      finnish.style.display = "block";
+      fiBtn.classList.add("active");
+      enBtn.classList.remove("active");
+      document.documentElement.lang = "fi";
+      document.title = "Artikkeli | Nina Honkalinna";
+    } else {
+      english.style.display = "block";
+      finnish.style.display = "none";
+      enBtn.classList.add("active");
+      fiBtn.classList.remove("active");
+      document.documentElement.lang = "en";
+      document.title = "Article | Nina Honkalinna";
+    }
+  }
+</script>
+
+</body>
+</html>
